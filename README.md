@@ -1,6 +1,5 @@
 # Job Listing Portal
 
-![Landing Page Banner](./landingpage.png)
 
 ## 🚀 About the Project
 
