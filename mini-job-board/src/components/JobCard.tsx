@@ -167,17 +167,20 @@ export default function JobCard({
                     </div>
 
                     <div>
-                        <h2 className="mt-1 font-bold text-gray-800">{jobTitle
-                            ? jobTitle.split(" ").slice(0, 4).join(" ") +
-                                (jobTitle.split(" ").length > 4 ? "..." : "")
-                            : ""}</h2>
+                        <h2 className="mt-1 font-bold text-gray-800">
+                            {jobTitle
+                                ? jobTitle.length > 30
+                                ? jobTitle.slice(0, 30) + "..."
+                                : jobTitle
+                            : ""}
+                        </h2>
                     </div>
 
                     <div className="pt-1 h-[10vh] text-gray-500 text-[0.8rem]">
                         <h2>
                         {description
-                            ? description.length > 130
-                            ? description.slice(0, 130) + "..."
+                            ? description.length > 110
+                            ? description.slice(0, 110) + "..."
                             : description
                         : ""}
                         </h2>
