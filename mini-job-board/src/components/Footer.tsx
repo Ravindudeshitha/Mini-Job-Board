@@ -15,7 +15,7 @@ export default function Footer() {
 
             <div className="px-10 flex justify-between ">
                 <div className="text-gray-500 w-1/4 h-[20vh]">
-                    <h2>Your gateway to top jobs, trusted companies, and the career you've always wanted. Explore, apply, and grow.</h2>
+                    <h2>{`Your gateway to top jobs, trusted companies, and the career you've always wanted. Explore, apply, and grow.`}</h2>
                 </div>
                 <div className="text-gray-500 h-[20vh] flex flex-col space-y-2">
                     <Link href='/' className="text-[#2A2929]">Home</Link>

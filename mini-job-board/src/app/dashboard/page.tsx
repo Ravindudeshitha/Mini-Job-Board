@@ -33,7 +33,7 @@ type Job = {
 };
 
 export default function Dashboard() {
-    const {openPopup} = usePopup();
+    
 
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(true);
@@ -55,9 +55,9 @@ export default function Dashboard() {
     console.log(jobs)
 
     useEffect(() => {
-    if (currentUser && currentUser.companyId) {
-        fetchJobs();
-    }
+        if (currentUser && currentUser.companyId) {
+            fetchJobs();
+        }
     }, [currentUser]);
 
     const onDelete = (jobId: number) => {
@@ -75,7 +75,6 @@ export default function Dashboard() {
 
     useEffect(() => {
         const user = localStorage.getItem('user');
-        const token = Cookies.get('token');
 
         if (!user) {
             router.push('/');

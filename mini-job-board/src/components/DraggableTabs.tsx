@@ -64,7 +64,6 @@ export default function DraggableTabs({setFilterName}: postProps) {
     handleIcons(tabsBox.scrollLeft);
   };
 
-  const handleMouseDown = () => setIsDragging(true);
   const handleMouseUp = () => setIsDragging(false);
 
   useEffect(() => {

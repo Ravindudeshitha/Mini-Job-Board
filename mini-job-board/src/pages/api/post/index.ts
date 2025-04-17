@@ -39,7 +39,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse){
             });
 
             return res.status(200).json({
-                message: 'Jost Posting successful'
+                message: 'Jost Posting successful',
+                job: job
             });
         }
         catch(error){

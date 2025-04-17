@@ -1,10 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '../../../db/index';
 import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
-import { serialize } from 'cookie';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse){
     if (req.method === 'POST'){
@@ -47,7 +44,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             });
 
             return res.status(200).json({
-                message: 'Registration successful'
+                message: 'Registration successful',
+                dummyCompany: dummyCompany
             });
         }
         catch (e) {

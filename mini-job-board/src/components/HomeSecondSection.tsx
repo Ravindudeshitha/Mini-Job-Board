@@ -1,6 +1,5 @@
 'use client'
 
-import Image from "next/image";
 import DraggableTabs from "./DraggableTabs";
 import JobButton from "./JobButton";
 import Link from "next/link";
@@ -91,7 +90,7 @@ export default function HomeSecondSection() {
         <div className="flex justify-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {filteredJobs.length === 0 ? (
-              <p className="text-gray-500 col-span-full text-center">No jobs found for "{filterName}"</p>
+              <p className="text-gray-500 col-span-full text-center">{`No jobs found for "{filterName}"`}</p>
             ) : (
               filteredJobs.map((job) => (
                 <div

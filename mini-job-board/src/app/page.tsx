@@ -1,6 +1,5 @@
 'use client';
-import Image from "next/image";
-import { useEffect, useState } from "react";
+
 import HomeFirstSection from "@/components/HomeFirstSection";
 import HomeSecondSection from "@/components/HomeSecondSection";
 import HomeThiredSection from "@/components/HomeThiredSection";

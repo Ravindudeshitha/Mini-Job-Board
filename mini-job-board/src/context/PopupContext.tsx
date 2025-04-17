@@ -5,16 +5,20 @@ type PopupContextType = {
   isOpen: boolean;
   openPopup: (data?: any) => void;
   closePopup: () => void;
-  popupData: any;
+  popupData: popup | null;
 };
+
+interface popup{
+  jobId: number;
+}
 
 const PopupContext = createContext<PopupContextType | undefined>(undefined);
 
 export const PopupProvider = ({ children }: { children: ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [popupData, setPopupData] = useState<any>(null);
+  const [popupData, setPopupData] = useState<popup | null>(null);
 
-  const openPopup = (data?: any) => {
+  const openPopup = (data?: popup) => {
     setPopupData(data || null);
     setIsOpen(true);
   };

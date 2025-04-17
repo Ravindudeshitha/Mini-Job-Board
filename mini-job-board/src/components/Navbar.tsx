@@ -2,13 +2,13 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import { useRouter } from 'next/navigation';
 import { useUser } from '@/context/UserContext';
 
 export default function Navbar() {
 
-    const [user, setUser] = useState(false);
+    
     const {currentUser, logout,} = useUser();
     const router = useRouter();
     

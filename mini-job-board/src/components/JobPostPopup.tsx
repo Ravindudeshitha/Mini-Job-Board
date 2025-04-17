@@ -53,7 +53,7 @@ const getTimeAgo = (dateString: string) => {
 };
 
 const formatSalary = (salary: string) => {
-  const pattern = /(\d{2,3})(?:\d{3})?/g;
+  //const pattern = /(\d{2,3})(?:\d{3})?/g;
   const numbers = salary.match(/\d+/g);
   if (!numbers || numbers.length < 2) return salary;
   const format = (n: string) => {

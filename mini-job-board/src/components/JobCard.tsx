@@ -3,7 +3,7 @@
 import { usePopup } from "@/context/PopupContext";
 import Image from "next/image"
 import Link from "next/link"
-import { use, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { MdDelete } from "react-icons/md";
 
 interface JobcardProps{
@@ -34,23 +34,23 @@ interface Tab {
 export default function JobCard({
     jobId,
     jobTitle,
-    jobType,
+    //jobType,
     category,
-    jobLocation,
+    //jobLocation,
     salaryRange,
     createdAt,
     description,
-    skills,
+    //skills,
     design,
     type,
     onDelete,
-    companyId,
+    //companyId,
     comName,
     image,
   }: JobcardProps){
     const {openPopup} = usePopup();
 
-    const [tabs, setTabs] = useState<Tab[]>([]);
+    //const [tabs, setTabs] = useState<Tab[]>([]);
     const [color, setColor] = useState<string | null>(null);
     
     useEffect (() =>{
@@ -58,8 +58,7 @@ export default function JobCard({
             try {
               const response = await fetch('/tabs.json');
               const data: Tab[] = await response.json();
-              setTabs(data);
-      
+              
               const matchedTab = data.find(tab => tab.name.toLowerCase() === category.toLowerCase());
               
               if (matchedTab) {

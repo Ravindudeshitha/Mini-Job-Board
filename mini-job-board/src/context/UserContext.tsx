@@ -1,7 +1,7 @@
 'use client'
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import {User} from '../type';
+
 
 type UserContextType = {
     currentUser: cUser | null;
@@ -105,6 +105,7 @@ export function UserProvider({children}: {children: ReactNode}) {
       return {status: 'success', message: 'Login successful'}
     }
     catch(e){
+      console.log(e);
       setCurrentUser(null);
       localStorage.removeItem('user');
       return {status: 'error', message: 'Something went wrong'}
@@ -141,6 +142,7 @@ export function UserProvider({children}: {children: ReactNode}) {
 
     }
     catch(e){
+      console.log(e);
       setCurrentUser(null);
       localStorage.removeItem('user');
       return {status: 'error', message: 'Something went wrong'}

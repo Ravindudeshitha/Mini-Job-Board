@@ -1,6 +1,6 @@
-interface User {
-    userId? : number;
-    name? : string;
-    email? : string;
-    password? : string;
-}
+// interface User {
+//     userId? : number;
+//     name? : string;
+//     email? : string;
+//     password? : string;
+// }

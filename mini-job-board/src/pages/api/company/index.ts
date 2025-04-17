@@ -4,7 +4,6 @@ import { authMiddleware } from '@/lib/authMidleware';
 import formidable from 'formidable';
 import fs from 'fs';
 import path from 'path';
-import { v4 as uuidv4 } from 'uuid';
 
 export const config = {
     api: {
@@ -28,7 +27,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse){
             contact,
           } = fields;
     
-          let imageField = fields.image;
+          const imageField = fields.image;
+
           console.log(imageField)
           try {
             const prevCompany = await prisma.company.findUnique({
