@@ -28,42 +28,26 @@ Key highlights:
 ## 🌟 Features
 
 - 🌐 **Landing Page** – Highlights portal features and call-to-action buttons  
-  ![Landing Page](./landingpage.png)
+  ![Landing Page](./Images/landingpage.png)
 
 - 📃 **Job Listing Page** – Explore all job posts with advanced category-based filtering  
-  ![Job Listings](./joblistingpage.png)
+  ![Job Listings](./Images/joblistingpage.png)
 
 - 📝 **Register / Sign Up** – Secure registration for companies  
-  ![Sign Up](./signup.png)
+  ![Sign Up](./Images/signup.png)
 
 - 🔐 **Login** – Companies can securely log in to manage postings  
-  ![Login](./login.png)
+  ![Login](./Images/login.png)
 
 - 📊 **Dashboard** – Companies can view, add, and delete their job posts  
-  ![Dashboard](./dashboard.png)
+  ![Dashboard](./Images/dashboard.png)
 
 - ➕ **Post a Job** – Simple popup modals to create and manage job posts  
-  ![Post Job Popup](./jobpostpopup.png)  
-  ![Post Job Popup 2](./jobpostpopup2.png)
+  ![Post Job Popup](./Images/jobpostpopup.png)  
+  ![Post Job Popup 2](./Images/jobpostpopup2.png)
 
 ---
 
-## 📁 Folder Structure
-
-```
-job-listing-portal/
-├── components/         # Reusable UI components
-├── pages/
-│   ├── index.js        # Landing page
-│   ├── jobs/           # Job listings and job detail pages
-│   ├── auth/           # Login and signup pages
-│   └── dashboard/      # Company dashboard with job controls
-├── prisma/             # Prisma schema and migrations
-├── public/             # Static assets (includes all images shown above)
-├── styles/             # Tailwind and global styles
-├── .env.example        # Environment variable template
-└── README.md           # Project documentation
-```
 
 ---
 
@@ -76,16 +60,11 @@ job-listing-portal/
 
 ### Installation
 ```bash
-git clone https://github.com/yourusername/job-listing-portal.git
-cd job-listing-portal
+git clone https://github.com/Ravindudeshitha/Mini-Job-Board.git
+cd mini-job-board
 npm install
 ```
 
-### Setup Environment
-```bash
-cp .env.example .env
-# Configure your DATABASE_URL in the .env file
-```
 
 ### Migrate Database
 ```bash
@@ -95,8 +74,7 @@ npx prisma migrate dev --name init
 ### Run the App
 ```bash
 npm run dev
-# or
-yarn dev
+
 ```
 
 Visit: [http://localhost:3000](http://localhost:3000)
@@ -127,7 +105,7 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 
 ## 📬 Contact
 
-**Your Name** – [@your_twitter](https://twitter.com/your_twitter) – your.email@example.com
+**Your Name**  – ravindudeshitha01@gmail.com
 
-Project Link: [https://github.com/yourusername/job-listing-portal](https://github.com/yourusername/job-listing-portal)
+Project Link: [https://github.com/Ravindudeshitha/Mini-Job-Board](https://github.com/Ravindudeshitha/Mini-Job-Board)
 
