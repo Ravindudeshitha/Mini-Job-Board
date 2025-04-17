@@ -164,11 +164,14 @@ export default function JobPostPopup() {
           <div className="p-2 bg-[#2A2929] text-[#A1F96A] space-y-2 rounded-xl mt-5">
             <div className="flex items-center gap-3">
               {job.company?.image && (
-                <img
-                  src={`/${job.company.image}`}
-                  alt="Company Logo"
-                  className="w-12 h-12 object-cover rounded-full"
-                />
+                <div className="w-12 h-12 relative rounded-full overflow-hidden">
+                  <Image
+                    src={`/${job.company.image}`}
+                    alt="Company Logo"
+                    fill
+                    className="object-cover rounded-full"
+                  />
+                </div>
               )}
               <span className="font-semibold text-xl">{job.company.comName}</span>
             </div>

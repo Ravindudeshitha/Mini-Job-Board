@@ -2,12 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Cookies from 'js-cookie';
 import { useUser } from '@/context/UserContext';
 import Company from '@/components/Company';
 import JobCard from '@/components/JobCard';
 import NewPost from '@/components/NewPost';
-import { usePopup } from '@/context/PopupContext';
 
 type Company = {
     companyId: number;
@@ -52,11 +50,24 @@ export default function Dashboard() {
             setJobs(data);
         })
     }
-    console.log(jobs)
 
     useEffect(() => {
+        const fetchJob = () =>{
+            fetch(`/api/post/${currentUser&&currentUser.companyId}`,{
+                headers: {
+                    "Content-Type": 'application/json'
+                    },
+                    method: 'GET',
+                    credentials: 'include',
+            })
+            .then((res) => res.json())
+            .then((data) =>{
+                setJobs(data);
+            })
+        }
+
         if (currentUser && currentUser.companyId) {
-            fetchJobs();
+            fetchJob();
         }
     }, [currentUser]);
 
@@ -81,7 +92,7 @@ export default function Dashboard() {
         } else {
             setIsLoading(false);
         }
-    }, []);
+    }, [router]);
 
     if (isLoading) {
         return <div className="text-center mt-10 text-gray-600">Loading...</div>;

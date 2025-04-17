@@ -95,8 +95,23 @@ export default function Company() {
     }
 
     useEffect(()=>{
-        fetchCompany();
-    },[]);
+        const fetchCom = async () => {
+            fetch(`/api/company/${currentUser && currentUser.id}`, {
+                headers: {
+                  "Content-Type": 'application/json'
+                },
+                method: 'GET',
+                credentials: 'include',
+            })
+            .then((res) => res.json())
+            .then((data) =>{
+                console.log(data.company);
+                setCompanyDetails(data.company);
+            })
+        }
+
+        fetchCom();
+    },[currentUser]);
 
     return (
         <div className="w-full h-full flex flex-col gap-4">

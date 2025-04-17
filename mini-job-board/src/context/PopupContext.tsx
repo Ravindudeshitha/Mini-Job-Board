@@ -3,7 +3,7 @@ import { createContext, useContext, useState, ReactNode } from "react";
 
 type PopupContextType = {
   isOpen: boolean;
-  openPopup: (data?: any) => void;
+  openPopup: (data?: popup) => void;
   closePopup: () => void;
   popupData: popup | null;
 };

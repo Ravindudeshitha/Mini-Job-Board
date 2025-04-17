@@ -1,7 +1,7 @@
 'use client';
 
 import JobCard from "@/components/JobCard";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 interface Tab {
   name: string;
@@ -65,13 +65,13 @@ export default function Jobs() {
     getAllJobs();
   }, []);
 
-  const handleFilterChange = () => {
+  const handleFilterChange = useCallback(() => {
     let tempJobs = [...jobs];
-
+  
     if (categoryFilter !== "All") {
       tempJobs = tempJobs.filter((job) => job.category === categoryFilter);
     }
-
+  
     if (jobTypeFilter.length > 0) {
       tempJobs = tempJobs.filter((job) => {
         const jobTypes = job.jobType.split(",").map((j) => j.trim().toLowerCase());
@@ -80,14 +80,14 @@ export default function Jobs() {
         );
       });
     }
-
+  
     if (timeFilter !== "All") {
       const now = new Date();
       tempJobs = tempJobs.filter((job) => {
         const jobDate = new Date(job.createdAt);
         const diffInMs = now.getTime() - jobDate.getTime();
         const diffInHours = diffInMs / (1000 * 60 * 60);
-
+  
         switch (timeFilter) {
           case "1_hour":
             return diffInHours <= 1;
@@ -102,14 +102,14 @@ export default function Jobs() {
         }
       });
     }
-
+  
     setFilteredJobs(tempJobs);
     setCurrentPage(1);
-  };
+  }, [jobs, categoryFilter, jobTypeFilter, timeFilter]);
 
   useEffect(() => {
     handleFilterChange();
-  }, [categoryFilter, jobTypeFilter, timeFilter]);
+  }, [categoryFilter, jobTypeFilter, timeFilter, handleFilterChange]);
 
   const resetFilters = () => {
     setCategoryFilter("All");
